@@ -24,7 +24,7 @@ This is my **first completed Godot game project** — built by following a helpf
 
 | Level 1 | Level 2 | Level 3 |
 |--------|--------|--------|
-| ![Level 1 Screenshot](level1.png) | ![Level 2 Screenshot](level2.png) | ![Level 3 Screenshot](level3.png) |
+| ![Level 1 Screenshot](level1.png) | ![Level 2 Screenshot](level2_updated.png) | ![Level 3 Screenshot](level3.png) |
 
 ---
 
