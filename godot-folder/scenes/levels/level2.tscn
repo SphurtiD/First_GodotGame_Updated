@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dti478c67ekne"]
+[gd_scene load_steps=11 format=3 uid="uid://dti478c67ekne"]
 
 [ext_resource type="Texture2D" uid="uid://b46bvgqraton" path="res://assets/backgrounds/Pink.png" id="1_yqkch"]
 [ext_resource type="Texture2D" uid="uid://cpou7rudpvo16" path="res://assets/terrain/Terrain (16x16).png" id="2_8i3m3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dbwg174ii8wlu" path="res://scenes/game_objects/finish.tscn" id="5_jifot"]
 [ext_resource type="Script" uid="uid://dpn405y0fpv5u" path="res://scenes/levels/game_manager.gd" id="6_3opl0"]
 [ext_resource type="PackedScene" uid="uid://jjq16u7qim15" path="res://scenes/levels/level3.tscn" id="6_6ep0u"]
+[ext_resource type="Texture2D" uid="uid://dmjer50nqc62x" path="res://assets/game_elements/Item 3-1.png.png" id="8_k0mew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("2_8i3m3")
@@ -276,9 +277,10 @@ position = Vector2(1849, 532)
 position = Vector2(2301, 513)
 target_level = ExtResource("6_6ep0u")
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("6_3opl0")
+hearts = [NodePath("../UI/Hearts/HBoxContainer/Heart"), NodePath("../UI/Hearts/HBoxContainer/Heart2"), NodePath("../UI/Hearts/HBoxContainer/Heart3")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -302,3 +304,46 @@ theme_override_font_sizes/font_size = 50
 text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Hearts" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -410.0
+offset_top = 22.0
+offset_right = -15.0
+offset_bottom = 111.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hearts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -44.5
+offset_right = 197.5
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Heart" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_k0mew")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_k0mew")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_k0mew")
+expand_mode = 2
